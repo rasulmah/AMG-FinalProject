@@ -1,0 +1,40 @@
+@use '../../abstracts/variables';
+
+#FeatureSlider{
+  gap: 20px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .swiper {
+    width: 100%;
+    height: 190px;
+    background-color: variables.$main-bg;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto !important;
+    
+  }
+  
+  .swiper-slide img {
+    display: block;
+  }
+
+  .swiper-pagination-bullet{
+   background: variables.$VoltGreen !important;
+  }
+  .swiper-pagination{
+    position: relative !important;
+    
+  }
+
+  .swiper-wrapper{
+   height: auto ;
+  }
+}

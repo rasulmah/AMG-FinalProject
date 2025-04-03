@@ -1,0 +1,214 @@
+@use '../abstracts//variables';
+
+.contact-container {
+     padding-top: 100px;
+     background: url('https://shop-int.mercedesamgf1.com/cdn/shop/files/background-3_d4b03e7a-f58a-4737-afaf-790fcf79df4b.jpg?v=1677662101&width=4472')
+       center/cover no-repeat fixed;
+     color: white;
+   
+     .contact-heading {
+       text-align: center;
+   
+       h2 {
+         padding: 80px 0px;
+         font-weight: 700;
+         line-height: 110%;
+         font-size: 36px;
+       }
+     }
+   
+     .contact-body {
+       width: 80%;
+       margin: 0 auto;
+   
+       .contact-first {
+         .contact-info {
+           display: flex;
+           justify-content: center;
+           padding-top: 40px;
+   
+           h2 {
+             font-weight: 700;
+             line-height: 126%;
+             width: 80%;
+           }
+         }
+       }
+     }
+   }
+   
+   .contact-card-container {
+     justify-content: center;
+     gap: 20px;
+     padding: 40px 0;
+     width: 80%;
+     display: flex;
+     align-items: center;
+     margin: 0 auto;
+   
+     .contact-card {
+       width: 33%;
+       height: 320px;
+       padding: 30px 20px;
+       background-color: #e8e8e8;
+       color: variables.$Color_CarbonGrey;
+   
+       .card-text {
+         display: flex;
+         justify-content: center;
+         font-size: 28px;
+         font-weight: bold;
+       }
+   
+       .card-info {
+         justify-content: center;
+         padding: 20px;
+         font-size: 14px;
+         text-align: center;
+         font-weight: 300;
+         line-height: 140%;
+       }
+   
+       .card-button {
+         width: 100%;
+         padding: 15px 20px;
+          text-align: left;
+          text-transform: uppercase;
+          font-size: 13px;
+    font-weight: 300;
+    letter-spacing: .13em;
+    line-height: 126%;
+    border: none;
+    background-color: #fff;
+    transition: all 0.4s ease;
+    &:hover{
+     background-color: variables.$Color_PetronasTeal-light;
+     color: variables.$Color_Background;
+     transform: scale(1.01);
+    }
+       }
+     }
+   }
+   
+   // Contact Form Styling
+   .contact-form-container {
+    width: 80%;
+    margin: 0 auto;
+     text-align: center;
+     padding: 50px 0;
+   
+     .contact-form-text {
+       font-size: 28px;
+       font-weight: bold;
+       margin-bottom: 20px;
+     }
+   
+     .contact-form {
+       width: 100%;
+       margin: 0 auto;
+       border-radius: 10px;
+   
+       .form-row {
+         display: flex;
+         gap: 10px;
+         margin-bottom: 15px;
+   
+         input,
+         select {
+           flex: 1;
+           display: flex;
+           align-items: center;
+           width: 100%;
+           height: 50px;
+           padding: 10px 15px;
+           font-size: 16px;
+           font-weight: 300;
+           line-height: 21px;
+           border-radius: 2px;
+           border: none;
+           color: #fff;
+           background-color: variables.$Color_Grey-dark;
+         }
+       }
+   
+       textarea {
+         width: 100%;
+         padding: 10px;
+         border-radius: 5px;
+         border: none;
+         font-size: 16px;
+         min-height: 100px;
+         margin-bottom: 15px;
+         background-color: variables.$Color_Grey-dark;
+       }
+   
+       button {
+         width: 100%;
+         padding: 12px;
+         border: none;
+         background: white;
+         color: black;
+         font-weight: bold;
+         border-radius: 5px;
+         cursor: pointer;
+         transition: 0.3s;
+   
+         &:hover {
+          background-color: variables.$Color_PetronasTeal-light;
+          color: variables.$Color_Background;
+          transform: scale(1.01);
+         }
+       }
+     }
+   }
+   
+
+   .contact-form-info-text{
+     p{
+          text-align: left;
+          font-weight: 300;
+          line-height: 140%;
+          font-size: 14px;
+          color: variables.$Color_Body;
+     }
+   }
+
+
+@media (max-width: 1200px){
+     .contact-card{
+          height: auto;
+          min-height: 330px;
+     }
+}
+
+@media (max-width:1100px){
+     .contact-card-container{
+          flex-direction: column;
+     }
+     .contact-card{
+          width: 100% !important;
+          .card-info{
+               font-size: 16px !important;
+          }
+     }
+}
+
+
+@media (max-width: 400px){
+     .contact-card-container{
+          width: 100%;
+     }
+     .contact-card{
+          width: 100% !important;
+          .card-info{
+               font-size: 13px !important;
+          }
+     }
+     .contact-info h2 {
+          width: 100% !important;
+     }
+     .contact-container .contact-heading h2{
+          font-size: 32px !important;
+          padding: 40px 0 80px 0;
+     }
+}

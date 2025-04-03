@@ -1,0 +1,20 @@
+@use '../abstracts/variables';
+.img-container{
+     width: 100%;
+     height: 100vh;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     background: linear-gradient(rgba(4, 4, 4, 0.433), rgba(0, 0, 0, 0.608)), 
+            url(https://shop-int.mercedesamgf1.com/cdn/shop/files/H24371_SS25_Motorsport_Launch_Phase_Teamwear_16x9_24_86e5c25b-9386-44b0-b6ee-89f2d6da1265.png?v=1738763722&width=945);
+     background-position: center;
+     background-size: cover;
+     background-repeat: no-repeat;
+     .text{
+          margin-bottom: 0;
+          color: variables.$accent-color;
+          font-size: 60px;
+          font-weight: 600;
+     }
+}

@@ -1,0 +1,73 @@
+@use '../../abstracts/variables';
+
+.fixed-settings-button {
+     transition: all 0.4s ease-in-out !important;
+     position: fixed;
+     bottom: 20px;
+     right: 20px;
+     z-index: 99999;
+
+     .car-button {
+          background: variables.$Color_Background;
+          border: none;
+          border-radius: 50%;
+          width: 65px;
+          height: 65px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+
+          img {
+               width: 40px;
+               height: 40px;
+          }
+     }
+
+     .dropdown-panel {
+          position: absolute;
+          bottom: 80px;
+          right: 0;
+          background-color: variables.$Color_Card;
+          border-radius: 12px;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+          padding: 12px;
+          width: 200px;
+          opacity: 0;
+          transform: translateY(20px) scale(0.95);
+          pointer-events: none;
+          transition: all 0.3s ease-in-out;
+
+          &.open {
+               opacity: 1;
+               transform: translateY(0) scale(1);
+               pointer-events: auto;
+          }
+
+          .setting-option {
+               display: flex;
+               align-items: center;
+               gap: 10px;
+               padding: 8px;
+               cursor: pointer;
+               color: var(--Color_Body);
+               transition: background 0.3s;
+
+               &:hover {
+                    background: rgba(0, 0, 0, 0.05);
+               }
+
+               svg {
+                    width: 20px;
+                    height: 20px;
+               }
+
+
+          }
+     }
+}
+
+span {
+     transition: opacity 0.3s ease, transform 0.3s ease;
+}

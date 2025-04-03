@@ -1,0 +1,59 @@
+@use '../../abstracts/variables';
+
+#FeaturedColSlider{
+     width: 100%;
+     .swiper {
+          width: 100%;
+          height: auto;
+          display: flex;
+        }
+        .swiper-wrapper{
+          margin-right: 20px !important;
+        }
+        
+        .swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          background: #fff;
+          width: auto !important;
+          height: auto !important;
+          transition: all 0.4s ease-in-out;
+          border-top-left-radius: 0;
+        
+          /* Center slide text vertically */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        
+        .swiper-button-prev::after, .swiper-button-next::after{
+          display: none;
+        }
+        .swiper-nav-btns{
+          display: flex;
+          gap: 10px;
+          padding: 20px 20px;
+          justify-content: end;
+          button{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            outline: none;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          button:hover{
+            cursor: pointer;
+            background-color: variables.$accent-color;
+          }
+        }
+        
+
+}
+
+.swiper-slide:hover{
+  border-top-left-radius: 62px !important;
+  transform: scale(1.0);
+}

@@ -1,0 +1,343 @@
+@use '../abstracts/variables';
+
+.checkout-container{
+  padding-top: 40px;
+  height: auto;
+  width: 100%;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+  .logo{
+    padding-bottom: 50px;
+    margin: 0 auto;
+    width: 195px !important;
+    img{
+      width: 195px;
+      height: auto;
+    }
+  }
+
+
+    .heading{
+      color: #fff;    
+      h3.paa{
+        font-size: 20px;
+        font-weight: 600;
+      }  
+      p.caa{
+        color: rgba(255,255,255,0.66);
+        font-weight: 200;
+      }
+    }
+
+    .checkout-form{
+      padding: 0 390px;
+      .check-form-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .credit-or-debit-card{
+          padding: 14px 14px;
+          width: 100%;
+          background-color: #fff;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          i{
+            font-size: 6px;
+            width: 10px;
+            height: 10px;
+          }
+          p{
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    .accordion-button,.accordion-collapse, .accordion-header, .accordion, .accordion-body, .accordion-item{
+      border-radius: 0 !important;
+    }
+
+
+    #checkout-form{
+      padding: 14px;
+      background-color: rgb(27,27,27);
+      gap: 14px;
+      display: flex;
+      flex-direction: column;
+      input {
+        background-color: #111;
+        padding: 14px;
+        border: 1px solid grey;
+        outline: none;
+        color: white; /* Ensures text inside the input is white */
+      }
+      
+      input::placeholder {
+        color: grey; /* Optional: Change placeholder color */
+      }
+
+    }
+
+
+    .tooltip-icon{
+      position: absolute;
+      color: #fff;
+      right: 14px;
+      top: 14px;
+    }
+    .form-row{
+      gap: 14px;
+      .form-group{
+        width: 100%;
+        position: relative;
+        input{
+          width: 100%;
+        }
+      }
+    }
+
+    .card-number{
+      position: relative;
+      i{
+        color: #fff;
+        font-size: 16px;
+        position: absolute;
+        right: 14px;
+        top: 18px;
+      }
+    }
+
+
+    .privacy-policy-terms-text{
+      width: 100%;
+      font-size: 14px;
+      color: #fff;
+      font-weight: 200;
+      padding-bottom: 40px;
+      opacity: 0.7;
+      
+    }
+    button[form="checkout-form"]{
+      width: 100%;
+      background-color: variables.$VoltGreen;
+      padding: 14px;
+      margin-bottom: 40px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .shipping-container {
+    background-color: #111;
+    width: 100%;
+    padding: 40px 0;
+    color: white;
+    
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      padding-bottom: 15px;
+    }
+    
+    .shipping-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px;
+      border: 2px solid #333;
+      cursor: pointer;
+      margin-bottom: 10px;
+      background-color: #111;
+      transition: background 0.3s ease;
+    }
+    
+    .shipping-option.selected {
+      background-color: #eee;
+      color: black;
+    }
+    
+    .shipping-option input {
+      margin-right: 10px;
+      transform: scale(1.2);
+    }
+    
+    .shipping-details {
+      flex-grow: 1;
+      margin-left: 10px;
+    }
+    
+    .shipping-title {
+      font-weight: bold;
+    }
+    
+    .shipping-time {
+      display: block;
+      font-size: 12px;
+      color: gray;
+    }
+    
+    .shipping-price {
+      font-weight: bold;
+    }
+  }
+  
+  
+}
+
+.accordion-body{
+  .checkout-total-order{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    .checkout-item-image{
+      position: relative;
+      width: 100px !important;
+      height: 100px;
+      
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background-size: cover;
+        background-position: center;
+      }
+      .badge{
+        color: black;
+        border-radius: 50%;
+        background-color: variables.$VoltGreen;
+        position: absolute;
+        top: -5px;
+        right: -5px;
+      }
+    }
+
+
+   
+    
+  }
+}
+.checkout-item{
+  display: flex;
+  width: 100%;
+}
+.checkout-item-details{
+width: 180px;
+  .title{
+    color: black;
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+
+  .price{
+    font-size: black;
+    font-size: 13px;
+  }
+}
+
+.tooltip-icon-2{
+  margin-bottom: 1rem;
+  gap: 6px;
+  p{
+    margin-bottom: 0;
+  }
+  i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media(max-width:1220px){
+  .checkout-total-order{
+    display: flex !important;
+    flex-wrap: wrap;
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+}
+
+
+@media(max-width:1350px){
+  .checkout-form{
+    padding: 0 290px !important;
+  }
+}
+@media(max-width:1150px){
+  .checkout-form{
+    padding: 0 200px !important;
+  }
+}
+@media(max-width:930px){
+  .checkout-form{
+    padding: 0 100px !important;
+  }
+}
+@media(max-width:650px){
+  .checkout-form{
+    padding: 0 50px !important;
+    .privacy-policy-terms-text{
+      font-size: 12px !important;
+    }
+  }
+  #checkout-form{
+
+    input {
+      color: white; /* Ensures text inside the input is white */
+    }
+    
+    input::placeholder {
+      color: grey; /* Optional: Change placeholder color */
+      font-size: 14px !important;
+    }
+
+  }
+}
+@media(max-width:520px){
+  .checkout-form{
+    padding: 0 20px !important;
+  }
+  #checkout-form{
+
+    input {
+      color: white; /* Ensures text inside the input is white */
+    }
+    
+    input::placeholder {
+      color: grey; /* Optional: Change placeholder color */
+      font-size: 12px !important;
+    }
+
+  }
+}
+@media(max-width:490px){
+  .checkout-form{
+    padding: 0 10px !important;
+  }
+  #checkout-form{
+
+    input {
+      color: white; /* Ensures text inside the input is white */
+    }
+    
+    input::placeholder {
+      color: grey; /* Optional: Change placeholder color */
+      font-size: 11px !important;
+    }
+
+  }
+}

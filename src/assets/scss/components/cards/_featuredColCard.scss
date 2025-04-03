@@ -1,0 +1,94 @@
+@use '../../abstracts/variables';
+
+.featured-card-container{
+     width: 1380px  !important;
+     height: 545px !important;
+     background-image:linear-gradient(180deg, rgba(0, 0, 0, 0.075) 45%, variables.$accent-color-bg 92%), url(https://shop-int.mercedesamgf1.com/cdn/shop/files/Carousel_Medias_06f61889-6d48-4ccf-b365-7153fe8e9631.png?v=1738749161&width=1380);
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: 65% 5%;
+     border-radius: 2px;
+     border-top-left-radius: 100px;
+     padding: 30px 40px;
+     color: white;
+     cursor: pointer;
+
+     .t-body{
+          width: 70%;
+          gap: 8x;
+          .category-heading{
+               font-size: 30px !important;
+               font-weight: 700 !important;
+               line-height: 126% !important;
+          }
+          .category-subtext{
+               font-size: 14px;
+               font-weight: 300;
+               line-height: 140%;
+               opacity: 0.7;
+          }
+          .shp-text{
+               cursor: pointer;
+               font-size: 13px !important;
+               font-weight: 300 !important;
+               letter-spacing: .13em !important;
+               line-height: 126% !important;
+               text-align: center;
+               text-transform: uppercase !important;
+               text-decoration: none;
+               color: #fff !important;
+               gap: 0.5em;
+          }
+     }
+}
+
+
+@media only screen and (max-width: 1515px){
+     .featured-card-container{
+          height: 545px !important;
+     }
+
+     @media only screen and (max-width: 1415px){
+          .featured-card-container{
+               height: 505px !important;
+          }
+     }
+     @media only screen and (max-width: 1350px){
+          .featured-card-container{
+               width: 1105px !important;
+          }
+          
+     }
+     @media only screen and (max-width: 1200px){
+          .featured-card-container{
+               width: 1305px !important;
+               height: 545px !important;
+          }
+     }
+     @media only screen and (max-width: 1000px){
+          .featured-card-container{
+               width: 1105px !important;
+               background-position: 50%;
+               height: 545px !important;
+          }
+     }
+
+     @media only screen and (max-width: 936px){
+          .featured-card-container{
+               background-image:linear-gradient(180deg, rgba(0, 0, 0, 0.075) 45%, rgba(0, 0, 0, 0.849) 92%), url(https://shop-int.mercedesamgf1.com/cdn/shop/files/Carousel_Medias_06f61889-6d48-4ccf-b365-7153fe8e9631.png?v=1738749161&width=1380);
+               width: 100% !important;
+               background-position: center;
+               .t-body{
+                    align-items: center;
+                    width: 100%;
+               }
+          }
+     }
+}
+
+
+
+
+/*Rigth*/
+
+

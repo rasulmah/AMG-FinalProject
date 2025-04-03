@@ -1,0 +1,137 @@
+@use '../abstracts/variables';
+
+footer{
+     display: flex;
+     width: 100%;
+     min-height: 100vh;
+     text-transform: uppercase;
+     background-image: url(https://shop-int.mercedesamgf1.com/cdn/shop/files/footer_official_24eb8ea2-4cd0-4e76-9317-6222b7ed13fe.jpg?v=1707992059&width=3840);
+               background-repeat: no-repeat;
+               background-size: cover;
+               background-position: center;
+               background-attachment: fixed;
+     .footer-container {
+          gap: 60px;
+          padding-top: 40px;
+     }
+}
+.logo-f img{
+     width: 100% !important;
+     object-fit: cover;
+     object-position: center;
+     height: 60px;
+}
+
+.content-item{
+          a{
+          padding: 2px 30px;
+          gap: 25px;
+          text-transform: uppercase;
+          outline: none;
+          border: none;
+          background-color: transparent !important;
+          color: #fff;
+          font-size: 37px;
+          font-weight: 300;
+          letter-spacing: .13em;
+          line-height: 110%;
+          }
+          
+     svg{
+          width: 10px;
+          height: 10px;
+     }
+     .collapse-link{
+          font-size: 16px;
+          opacity: 0.7;
+     }
+}
+
+
+
+.media-container-footer{
+     gap: 10px;
+}
+.content{
+     gap: 30px;
+}
+
+
+.collapse-container{
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+     padding-top: 10px;
+     justify-content: center;
+     align-items: center;
+}
+
+
+
+.socials{
+     gap: 30px;
+     .social-link{
+          width: 30px;
+          height: 30px;
+          color: #fff;
+          i{
+               font-size: 20px;
+          }
+     }
+}
+
+
+.btn-top{
+     width: 30px;
+     height: 30px;
+     border-radius: 50%;
+     outline: none;
+     border: none;
+     backdrop-filter: blur(16px);
+     svg{
+          width: 10px;
+          height: 10px;
+     }
+}
+
+
+
+.footer-nav{
+     gap: 25px;
+     width: 100%;
+     a{
+          color: #fff;
+     }
+}
+
+
+
+@media only screen and (max-width: 800px) {
+
+
+     .footer-nav{
+          flex-direction: column;
+          gap: 15px;
+          
+     }
+     .collapse-link{
+          font-size: 13px !important;
+          opacity: 0.7;
+     }
+     .content{
+          gap: 25px !important;
+
+          .content-item{
+               a{
+               font-size: 17px;
+               }
+               
+          svg{
+               width: 10px;
+               height: 10px;
+          }
+     }
+
+}
+     
+}

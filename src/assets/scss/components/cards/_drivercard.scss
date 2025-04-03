@@ -1,0 +1,121 @@
+@use '../../abstracts/variables';
+
+.driver-card{
+     padding: 25px 30px;
+     cursor: pointer;
+     display: flex;
+     justify-content: flex-end;
+     min-height: 800px;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+     position: relative;
+     transition: all 0.4s ease;
+
+     .driver-card-content{
+          position: absolute !important;
+          bottom: 50px;
+          left: 50px;
+          color: #fff;
+
+          .Drivers-Number{
+               margin-bottom: 0px;
+               font-size: 100px;
+               letter-spacing: -.08em;
+               line-height: 110%;
+               color: transparent;
+               -webkit-text-stroke-width: 2px;
+               -webkit-text-stroke-color: variables.$accent-color;
+           }
+          .Drivers-Name{
+               font-size: 50px;
+               font-weight: 700;
+               letter-spacing: -.01em;
+               line-height: 110%;
+          }
+          .link{
+               font-size: 13px;
+               font-weight: 300;
+               letter-spacing: .13em;
+               line-height: 126%;
+               text-align: center;
+               text-transform: uppercase;
+               color: #fff;
+          }
+     }
+}
+
+.driver-card:hover{
+     transform: scale(1.04);
+     
+}
+
+
+@media only screen and (max-width: 1400px){
+     .driver-card{
+          min-height: 750px;
+
+     }
+}
+@media only screen and (max-width: 1275px){
+     .driver-card{
+          min-height: 675px !important;
+          h3{
+               font-size: 50px;
+          }
+     }
+}
+@media only screen and (max-width: 1024px){
+     .driver-card{
+          min-height: 575px !important;
+          h3{
+               font-size: 50px !important;
+          }
+     }
+
+}
+@media only screen and (max-width: 850px){
+     .driver-card{
+          padding: 0 !important;
+          cursor: grab;
+          min-height: 750px !important;
+          .Drivers-Number{
+               font-size: 80px !important;
+               -webkit-text-stroke-color: variables.$accent-color;
+           }
+          h3{
+               font-size: 48px !important;
+          }
+     }
+
+}
+
+@media only screen and (max-width: 600px){
+     .driver-card{
+          cursor: grab;
+          min-height: 650px !important;
+          .Drivers-Number{
+               font-size: 60px !important;
+               -webkit-text-stroke-color: variables.$accent-color;
+           }
+          h3{
+               font-size: 44px !important;
+          }
+     }
+
+}
+@media only screen and (max-width: 500px){
+     .driver-card{
+          
+          cursor: grab;
+          min-height: 550px !important;
+          .driver-card-content{
+               left: 20px !important;
+               h3{
+                    font-size: 40px !important;
+               }
+          }
+          
+     }
+
+}

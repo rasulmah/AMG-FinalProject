@@ -1,0 +1,31 @@
+@use '../../abstracts/variables';
+
+.magnetic-button {
+     /* position: absolute;
+     bottom: 0; */
+     font-size: 13px;
+     font-weight: 300;
+     background: #fff;
+     border: none;
+     color: black;
+     border-radius: 2px;
+     cursor: pointer !important;
+     transition: transform 0.2s ease-out;
+     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+     align-items: center;
+     justify-content: center;
+     display: inline-flex;
+     padding: 16px 40px 14px;
+     letter-spacing: .13em;
+     line-height: 126%;
+     text-align: center;
+     text-transform: uppercase;
+   }
+
+
+   @media only screen and (max-width:750px){
+     .magnetic-button{
+          padding: 14px 30px 12px;
+     }
+   }
+   

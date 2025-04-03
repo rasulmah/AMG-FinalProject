@@ -1,0 +1,19 @@
+.section-cont{
+     background: 
+     linear-gradient(to right, rgba(0, 0, 0, 0.493), rgba(0, 0, 0, 0.6)), // Black gradient overlay
+     url("https://shop-int.mercedesamgf1.com/cdn/shop/files/Driver_Card_Landscape.png?v=1733758530&width=1944");
+     width: 100%;
+     height: 100vh;
+     background-position: center;
+     background-size: cover;
+     background-repeat: no-repeat;
+    /*  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+     -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%); */
+}
+
+.media-cont{
+     width: 60%;
+     .magnetic-button{
+          width: 280px;
+     }
+}

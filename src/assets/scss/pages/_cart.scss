@@ -1,0 +1,306 @@
+@use "../abstracts/variables";
+
+.cart-container {
+     padding: 9rem 2rem ;
+     background-image: url(https://shop-int.mercedesamgf1.com/cdn/shop/files/background-4_ab3be996-6fff-4a81-ab6e-56c3132a8a7d.jpg?v=1677662101&width=4472);
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+     background-attachment: fixed;
+     .products-cart-section {
+      max-width: 1100px;
+      margin: 0 auto;
+       
+       padding: 2rem;
+
+     }
+     .cart-card {
+       display: flex;
+       gap: 2rem;
+       padding: 1.5rem;
+       background-color: variables.$Color_Background;
+       border: 1px solid grey;
+   
+       &:last-child {
+         border-bottom: none;
+       }
+   
+       .cart-img-container {
+         width: 120px;
+         height: 120px;
+         background-size: cover;
+         background-position: center;
+         border-radius: 4px;
+       }
+   
+       .product-details {
+         flex: 1;
+         justify-content: space-between;
+         display: flex;
+         flex-direction: column;
+         
+         .product-title {
+           font-size: 1.2rem;
+           margin-bottom: 0.5rem;
+           color: #fff;
+         }
+   
+         .meta-info {
+           display: flex;
+           gap: 1rem;
+           margin-bottom: 1rem;
+           color: #fff;
+           font-size: 0.9rem;
+         }
+   
+         .price-info {
+           display: flex;
+           align-items: center;
+           gap: 0.5rem;
+           font-size: 1.1rem;
+           color: white;
+   
+           .price {
+             font-weight: 500;
+             color: #fff;
+           }
+   
+           .multiply {
+             opacity: 0.6;
+           }
+   
+           .quantity {
+             font-weight: 500;
+             color: #fff;
+           }
+         }
+       }
+   
+       .actions {
+         display: flex;
+         flex-direction: column;
+         align-items: flex-end;
+         gap: 1rem;
+         justify-content: space-between;
+         display: flex;
+         flex-direction: column;
+   
+         .delete-btn {
+           background: none;
+           border: none;
+           cursor: pointer;
+           transition: opacity 0.4s ease-in-out;
+   
+           &:hover {
+             opacity: 0.7;
+           }
+   
+           svg {
+             fill: #fff;
+             transition: all 0.4s ease-in-out;
+             &:hover{
+              transform: scale(1.0);
+              fill: variables.$Color_Red;
+             }
+           }
+         }
+   
+         .total-price {
+           font-size: 1.2rem;
+           font-weight: 600;
+           color: #fff;
+         }
+       }
+     }
+   
+     .checkout-section {
+       padding-top: 2rem;
+       border-top: 1px solid #eee;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+   
+       .total-amount {
+         font-size: 1rem;
+         font-weight: 600;
+         color: #fff;
+       }
+   
+       .checkout {
+         padding: 0.6rem 1.6rem;
+         font-size: 1rem;
+         border-radius: 4px;
+         letter-spacing: 0.5px;
+         background-color: variables.$Color_VoltGreen;
+         transition: all 0.4s ease-in-out;
+
+         &:hover{
+          opacity: 0.6;
+          transform: scale(1.001);
+         }
+       }
+     }
+   
+     .empty-basket {
+       text-align: center;
+       padding: 4rem 0;
+       color: #fff;
+   
+       .text-warning {
+         font-size: 1.2rem;
+         margin-bottom: 1.5rem;
+       }
+   
+       .btn-primary {
+         padding: 0.8rem 1.4rem;
+         font-size: 1.1rem;
+         border-radius: 4px;
+         background-color: #fff ;
+         outline: none !important;
+         border: none;
+         color: #141414;
+         &:hover{
+          background-color: variables.$accent-color;
+         }
+       }
+     }
+   }
+
+
+   .cart-card-container-basket{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    .checkout-section{
+      grid-column: 1/ -1;
+    }
+   }
+
+
+   
+
+
+
+@media (max-width: 1096px) {
+     .cart-container {
+       .products-cart-section {
+         padding: 1rem;
+       }
+     }
+     
+   
+     .cart-card {
+       flex-direction: column;
+       gap: 1rem !important;
+       position: relative;
+       padding:  1rem !important;
+   
+       .cart-img-container {
+         width: 100% !important;
+         height: 250px !important;
+       }
+   
+       .product-details {
+         .product-title {
+           font-size: 1.1rem !important;
+         }
+   
+         .meta-info {
+           flex-direction: column;
+           gap: 0.5rem !important;
+           font-size: 0.85rem !important;
+         }
+   
+         .price-info {
+           font-size: 1rem !important;
+         }
+       }
+   
+       .actions {
+         flex-direction: row !important;
+         justify-content: space-between;
+         align-items: center;
+         width: 100%;
+   
+         .delete-btn {
+           order: 2;
+           padding: 0.3rem !important;
+           
+           svg {
+             width: 20px;
+             height: 20px;
+           }
+         }
+   
+         .total-price {
+           order: 1;
+           font-size: 1.1rem !important;
+         }
+       }
+     }
+   
+     .checkout-section {
+       flex-direction: column;
+       gap: 1.5rem;
+       text-align: center;
+   
+       .total-amount {
+         font-size: 1.2rem !important;
+       }
+   
+       .checkout {
+         width: 100%;
+         padding: 1rem !important;
+       }
+     }
+   
+     .empty-basket {
+       padding: 2rem 0 !important;
+       
+       .text-warning {
+         font-size: 1rem !important;
+       }
+     }
+   }
+   
+   @media (max-width: 480px) {
+    .cart-container{
+      padding: 8rem 0rem;
+    }
+    .cart-card-container-basket{
+      display: grid;
+      grid-template-columns: 1fr !important;
+      gap: 20px;
+      .checkout-section{
+        grid-column: 1/ -1;
+      }
+     }
+     .cart-card {
+       .cart-img-container {
+         height: 290px !important;
+       }
+   
+       .product-details {
+         .product-title {
+           font-size: 1rem !important;
+         }
+         
+         .price-info {
+           flex-wrap: wrap;
+           gap: 0.3rem !important;
+         }
+       }
+   
+       .actions {
+         .total-price {
+           font-size: 1rem !important;
+         }
+       }
+     }
+   
+     .checkout-section {
+       .total-amount {
+         font-size: 1.1rem !important;
+       }
+     }
+   }

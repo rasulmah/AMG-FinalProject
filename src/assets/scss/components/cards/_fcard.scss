@@ -1,0 +1,28 @@
+@use '../../abstracts/variables';
+
+.card-container{
+     /* background-color: variables.$accent-color; */
+     color: #fff;
+     max-width: 300px;
+     margin: 0 auto;
+     padding-inline-start: 10px;
+     padding-inline-end: 10px;
+     text-align: center;
+     gap: 10px;
+
+     img{
+          width: 25px;
+          height: 25px;
+          object-fit: contain;
+     }
+     .card-heading{
+          font-size: 19px;
+          font-weight: 700;
+          line-height: 128%;
+     }
+     .card-text{
+          font-size: 14px;
+          color: #9c9c9c;
+     }
+     
+}

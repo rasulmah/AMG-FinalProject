@@ -1,0 +1,508 @@
+ @use '../abstracts/variables';
+ @use '../abstracts/mixins';
+
+ ::placeholder {
+      color: #fff !important;
+      opacity: 1 !important;
+ }
+
+ .MuiPaper-root {
+      z-index: 999 !important;
+      padding: 100px 0 0 30px !important;
+      background-color: variables.$main-bg !important;
+      color: white !important;
+
+ }
+
+ .MuiBadge-badge {
+      background-color: variables.$VoltGreen;
+      height: 15px !important;
+      width: 15px !important;
+      min-width: 15px !important;
+      cursor: pointer;
+ }
+
+
+ .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 5;
+      padding: 20px 20px;
+      transition: transform 0.3s ease-in-out;
+      background-color: transparent;
+
+
+      transition: all 0.4s ease-in-out;
+
+      &:hover {
+           background-color: rgba(0, 0, 0, 0.452);
+           transform: scale(1.0);
+           backdrop-filter: blur(16px);
+      }
+
+      &.header-hidden {
+           transform: translateY(-100%);
+           backdrop-filter: blur(16px);
+      }
+
+      .logo-container {
+           width: 404px;
+      }
+
+      .logo {
+           width: 195px;
+
+           .logo-link,
+           img {
+                @extend .logo;
+           }
+      }
+
+      .nav {
+           width: auto;
+
+           .navbar {
+                width: 100%;
+
+                .navbar-item {
+                     padding: 10px;
+
+                     .navbar-link {
+                          margin: 0 !important;
+                          color: white;
+                     }
+                }
+           }
+      }
+
+
+
+
+      /*SearchInput*/
+      .menu-container {
+           transition: all 0.4s ease-in-out !important;
+
+           &:hover {
+                transform: scale(1.0) !important;
+           }
+
+           svg {
+                width: 18px;
+                height: 18px;
+                color: #fff;
+           }
+
+           width: auto;
+
+           .form-container {
+                width: auto;
+
+                .form {
+                     width: 100%;
+                     background-color: #fdfdfd26 !important;
+                     backdrop-filter: blur(15px) !important;
+                     -webkit-backdrop-filter: blur(15px) !important;
+                     border-radius: 2px;
+
+                     .search-bar {
+                          background-color: inherit;
+                          padding: 10px 15px;
+                          height: 46px;
+                          outline: none;
+                          border: none;
+                     }
+
+                     .search-icon-btn {
+                          @extend .search-bar;
+
+                     }
+                }
+           }
+
+
+           /*container for icons*/
+           .menu-icons {
+                .menu-icon {
+                     @include mixins.svg-btn;
+                }
+           }
+      }
+
+ }
+
+ #open-btn {
+      display: none !important;
+ }
+
+
+ .side-menu {
+      position: fixed;
+      top: 0; // Start hidden
+      right: -100%;
+      width: 400px;
+      height: 100%;
+      background: #000000b4;
+      backdrop-filter: blur(36px);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 20px;
+      transition: right 0.3s ease-in-out;
+      z-index: 999999;
+
+      svg {
+           width: 18px;
+           height: 18px;
+           color: #fff;
+      }
+
+      .form-container {
+           width: auto;
+           transition: all 0.4s ease-in-out !important;
+
+           &:hover {
+                transform: scale(1.0) !important;
+           }
+
+           .form {
+                width: 100%;
+                background-color: #fdfdfd26 !important;
+                backdrop-filter: blur(15px) !important;
+                -webkit-backdrop-filter: blur(15px) !important;
+                border-radius: 2px;
+                transition: all 0.4s ease-in-out;
+
+                &:hover {
+                     transform: scale(1.0);
+                }
+
+                .search-bar {
+                     background-color: inherit;
+                     padding: 10px 10px;
+                     height: 46px;
+                     outline: none !important;
+                     border: none !important;
+                     transition: all 0.4s ease-in-out;
+
+                     &:hover {
+                          transform: scale(1.0);
+                     }
+                }
+
+                .search-icon-btn {
+                     background-color: inherit;
+                     padding: 10px 10px;
+                     height: 46px;
+                     outline: none !important;
+                     border: none !important;
+                }
+
+           }
+      }
+
+      ul {
+           list-style: none;
+           padding: 0;
+           margin-top: 40px;
+
+           li {
+                margin: 20px 0;
+           }
+
+           a {
+                color: white;
+                text-decoration: none;
+                font-size: 18px;
+                transition: all 0.4s ease-in-out;
+
+                &:hover {
+                     color: #00c3ff;
+                     transform: scale(1.0);
+                }
+           }
+      }
+ }
+
+ .side-menu.open {
+      right: 0; // Slide in when open
+ }
+
+ .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+ }
+
+ .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.712);
+      backdrop-filter: blur(16px);
+      z-index: 10000;
+ }
+
+ .search-icon-btn:hover {
+      cursor: pointer;
+      background-color: variables.$accent-color-bg !important;
+      transition: all ease-in-out 0.4s;
+ }
+
+ .search-icon-btn {
+      width: 50px !important;
+ }
+
+ .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+ }
+
+ .menu-container {
+      gap: 10px;
+ }
+
+ .menu-icons {
+      padding-left: 20px;
+ }
+
+
+ .sidebar-menuIcons {
+      display: flex;
+ }
+
+ .side-menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .search-bar {
+           width: 100%;
+      }
+
+      .MuiBadge-badge {
+           width: 20px !important;
+           height: 20px !important;
+           color: black;
+      }
+ }
+
+ .side-icon-link {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: rgb(244, 244, 244) !important;
+      width: 68px;
+      padding: 10px !important;
+      height: 65px;
+      background-color: rgba(240, 255, 255, 0.26);
+      border-radius: 10px;
+
+      span {
+           font-size: 14px;
+      }
+
+      button {
+           background-color: transparent;
+           outline: none;
+           border: none;
+           padding: 5px;
+           border-radius: 50%;
+      }
+
+      svg {
+           color: variables.$accent-color;
+           width: 20px;
+           height: 20px;
+      }
+ }
+
+ .searchbar-con {
+      position: relative;
+      width: 100%;
+      z-index: 91;
+ }
+
+ .search-suggestions {
+      position: absolute;
+      top: 100px;
+      left: 0;
+      right: 0;
+      background: white;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      max-height: 400px;
+      overflow-y: auto;
+ }
+
+ .search-suggestions li {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      cursor: pointer;
+      transition: background 0.2s;
+ }
+
+ .search-suggestions li:hover {
+      background: #f8f9fa;
+ }
+
+ .suggestion-image {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      margin-right: 15px;
+ }
+
+ .suggestion-info {
+      display: flex;
+      flex-direction: column;
+ }
+
+ .no-results {
+      padding: 10px;
+      color: #666;
+      font-style: italic;
+ }
+
+ .sidebar-search-suggestions {
+      background: white;
+      color: black;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 4px;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 666;
+
+      .suggestion-link {
+           display: flex;
+           align-items: center;
+           text-decoration: none;
+           color: #000;
+           padding: 8px;
+           border-bottom: 1px solid #eee;
+           transition: background 0.2s ease;
+
+           &:hover {
+                background: #f2f2f2;
+           }
+
+           .suggestion-image {
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+                margin-right: 10px;
+           }
+      }
+ }
+
+
+
+
+ @media only screen and (max-width: 1300px) {
+      #open-btn {
+           display: flex !important;
+      }
+
+      .nav,
+      ul.navbar,
+      .navbar-link {
+           display: none !important;
+      }
+
+      .menu-container {
+           width: 100% !important;
+      }
+
+      .form-container {
+           width: 100% !important;
+      }
+
+      .search-bar {
+           width: 100%;
+      }
+
+      .logo-container {
+           width: 195px !important;
+      }
+
+      @media only screen and (max-width: 900px) {
+           .logo {
+                width: 145px !important;
+           }
+      }
+
+      @media only screen and (max-width:750px) {
+           .header {
+                justify-content: flex-start !important;
+                align-items: flex-start !important;
+                gap: 20px;
+           }
+
+           .menu-container {
+                gap: 10px !important;
+           }
+
+           .menu-icons .icon-link {
+                display: none !important;
+
+           }
+
+           .MuiBadge-badge,
+           .MuiBadge-root {
+                display: none !important;
+           }
+
+           .menu-icons {
+                padding-left: 20px;
+           }
+
+           .side-menu {
+
+                .MuiBadge-badge,
+                .MuiBadge-root {
+                     display: flex !important;
+                }
+
+           }
+
+           @media only screen and (max-width: 550px) {
+                .side-menu {
+                     width: 100% !important;
+
+                     .form-container .form {
+                          display: flex !important;
+                     }
+                }
+
+                .overlay {
+                     display: none;
+                }
+
+                .form-container .form {
+                     display: none !important;
+                }
+
+                .menu-container {
+                     height: 44.7px;
+                }
+           }
+
+      }
+
+
+ }

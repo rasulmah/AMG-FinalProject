@@ -1,0 +1,110 @@
+@use '../abstracts/variables';
+
+
+.wishlist-container{
+     overflow-x: hidden;
+     background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.226), rgba(0, 0, 0, 0.205)), url(https://shop-int.mercedesamgf1.com/cdn/shop/files/background-4_ab3be996-6fff-4a81-ab6e-56c3132a8a7d.jpg?v=1677662101&width=4472);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+
+     padding: 150px 0px 50px 0px;
+     h2.wishlist-text{
+          text-align: center;
+          color: white;
+     }
+     .wishlist-cards-container{
+          display: grid;
+          grid-template-columns: auto auto auto auto; 
+          gap: 5px;
+          justify-content: center;
+          width: 100%;
+          .product-container-wishlist{
+               display: flex ;
+               position: relative;
+               .button-cancel-wish{
+                    position: absolute;
+                    background-color: #ffffff98;
+                    z-index: 9;
+                    right: 15px;
+                    top: 15px;
+                    border: 1px solid rgba(109, 109, 109, 0.356);
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    i{
+                         font-size: 20px;
+                         opacity: 0.7;
+                    }
+               }
+          }
+          
+     }
+}
+
+
+.wishlist-log-in-button{
+
+
+     /* position: absolute;
+     bottom: 0; */
+     font-size: 13px;
+     font-weight: 300;
+     background: #fff;
+     border: none;
+     color: black;
+     border-radius: 2px;
+     cursor: pointer !important;
+     transition: transform 0.2s ease-out;
+     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+     align-items: center;
+     justify-content: center;
+     display: inline-flex;
+     padding: 16px 40px 14px;
+     letter-spacing: .13em;
+     line-height: 126%;
+     text-align: center;
+     text-transform: uppercase;
+
+
+   @media only screen and (max-width:750px){
+     .magnetic-button{
+          padding: 14px 30px 12px;
+     }
+   }
+   
+
+}
+
+.heading-wishlist{
+     padding-bottom: 60px;
+}
+
+.small-text{
+     font-size: 14px;
+     color: variables.$Color_Body-onWhite;
+}
+
+
+@media (max-width:1505px){
+     .wishlist-cards-container{
+          display: grid;
+          grid-template-columns: auto auto auto !important;
+     }
+}
+@media (max-width:1145px){
+     .wishlist-cards-container{
+          display: grid;
+          grid-template-columns: auto auto !important;
+     }
+}
+
+@media (max-width:560px){
+     .wishlist-cards-container{
+          display: grid;
+          grid-template-columns: auto !important;
+     }
+}

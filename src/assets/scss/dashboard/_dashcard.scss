@@ -1,0 +1,74 @@
+@use '../abstracts/variables';
+
+.dash-card-container {
+     background-color: rgb(77, 77, 77);
+     width: 175px;
+     height: auto; 
+     border-radius: 10px;
+   
+     .d-img-container {
+       width: 175px;
+       height: 150px;
+       overflow: hidden;
+       border-radius: 10px 10px 0 0;
+   
+       img {
+         width: 100%;
+         height: 150px;
+         object-fit: cover;
+         border-radius: 10px 10px 0 0;
+       }
+     }
+   
+     .text-and-buttons {
+       padding: 10px;
+       width: 100%;
+   
+       .d-prod-title {
+         color: white;
+         max-width: 100%;
+         white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;
+         cursor: pointer;
+         transition: all 0.2s ease-in-out;
+       }
+   
+       .d-prod-title.full-title {
+         white-space: normal; 
+         overflow: visible;
+         text-overflow: unset;
+       }
+     }
+   }
+   
+
+   .editor-buttons{
+    display: flex;
+    justify-content: space-between;
+    button{
+      padding: 6px 16px;
+      border: none;
+      outline: none;
+      border-radius: 8px;
+    }
+    .edit-btn{
+      background-color: variables.$Color_PetronasTeal ;
+      transition: all 0.2s ease-in-out;
+      &:hover{
+        background-color: variables.$Color_PetronasTeal-dark ;
+        color: variables.$Color_Brand;
+        transform: scale(1.0);
+      }
+    }
+    .delete-btn{
+      background-color: variables.$Color_Red;
+      color: variables.$Color_Brand;
+      transition: all 0.2s ease-in-out;
+      &:hover{
+        background-color: variables.$Color_Red ;
+        opacity: 0.8;
+        transform: scale(1.0);
+      }
+    }
+   }

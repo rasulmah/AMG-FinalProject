@@ -1,0 +1,18 @@
+@use '../../abstracts/variables';
+
+.featured-right{
+     .featured-body{
+          flex-direction: row-reverse;
+     }
+     .swiper-wrapper{
+          width: 100%;
+          padding: 0;
+     }
+     .featured-card-container{
+          border-bottom-right-radius: 160px;
+          border-top-left-radius: 0;
+     }
+     .swiper-nav-btns{
+          justify-content: flex-start !important;
+     }
+}

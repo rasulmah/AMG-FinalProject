@@ -1,0 +1,74 @@
+@use '../../abstracts/variables';
+
+.card{
+     padding: 25px 30px;
+     cursor: grab;
+     display: flex;
+     justify-content: flex-end;
+     min-height: 606px;
+     /* background-image: url(https://shop-int.mercedesamgf1.com/cdn/shop/files/HP_Carousel_4.png?v=1738685047&width=1300); */
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+     background-color: #00000000 !important;
+     
+
+     .card-content{
+          text-align: center;
+          transition: all 0.4s ease-in-out;
+               &:hover{
+                    transform: scale(1.03);
+                    color: variables.$accent-color !important;
+               }
+          
+          h4{
+               font-size: 37px;
+               color: #fff;
+               font-weight: 700;
+               line-height: 110%;
+               transition: all 0.4s ease-in-out;
+               &:hover{
+                    transform: scale(1.03);
+                    color: variables.$accent-color !important;
+               }
+          }
+          p{
+               color: #fff;
+               font-size: 13px;
+               font-weight: 300;
+               letter-spacing: .13em;
+               line-height: 126%;
+               text-align: center;
+               text-transform: uppercase;
+               transition: all 0.4s ease-in-out;
+               &:hover{
+                    transform: scale(1.03);
+                    color: variables.$accent-color !important;
+               }
+          }
+     }
+}
+
+
+@media only screen and (max-width: 1400px){
+     .card{
+          min-height: 550px;
+     }
+}
+@media only screen and (max-width: 1275px){
+     .card{
+          min-height: 475px !important;
+          h4{
+               font-size: 32px;
+          }
+     }
+}
+@media only screen and (max-width: 1000px){
+     .card{
+          min-height: 400px !important;
+          h4{
+               font-size: 24px !important;
+          }
+     }
+
+}

@@ -1,0 +1,299 @@
+@use '../abstracts/variables';
+
+.about{
+     background-image: url(https://shop-int.mercedesamgf1.com/cdn/shop/files/background-4_ab3be996-6fff-4a81-ab6e-56c3132a8a7d.jpg?v=1677662101&width=4472);
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+     background-attachment: fixed;
+}
+
+.myVideo {
+     position: relative;
+     transition: all 0.4s ease-in-out;
+
+     video {
+       width: 100%;
+       height: 100vh;
+       object-fit: cover;
+       filter: brightness(0.8);      
+       transform: scale(1.0); 
+     }
+   
+     .mute-btn {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          bottom: 50px;
+          right: 20px;
+          background: rgba($color: #acacac1e, $alpha: 0.2);
+          color: white;
+          border: none;
+          /* padding: 16px 20px; */
+          width: 50px;
+          height: 50px;
+          font-size: 16px;
+          cursor: pointer;
+          border-radius: 5px;
+          border: 1px solid rgba(255, 255, 255, 0.199);
+          transition: 0.3s;
+          z-index: 2;
+          transition: all 0.4s ease-in-out;
+   
+       &:hover {
+           background: variables.$accent-color-bg;
+           transform: scale(1.0); 
+       }
+     }
+   }
+
+   video::-webkit-media-controls-panel {
+     display: none !important;
+   }
+ 
+   video::-webkit-media-controls-volume-slider {
+     display: block !important;
+   }
+ 
+   video::-webkit-media-controls-mute-button {
+     display: block !important;
+
+   }
+ 
+   /* Ensure full screen, progress bar, and more options are hidden */
+   video::-webkit-media-controls-timeline,
+   video::-webkit-media-controls-fullscreen-button,
+   video::-webkit-media-controls-current-time-display,
+   video::-webkit-media-controls-time-remaining-display,
+   video::-webkit-media-controls-play-button,
+   video::-webkit-media-controls-seek-back-button,
+   video::-webkit-media-controls-seek-forward-button,
+   video::-webkit-media-controls-overflow-menu-button {
+     display: none !important;
+   }
+   
+ 
+.about-title{
+     opacity: 0.7;
+     position: absolute;
+     bottom: 40px;
+     left: 40px;
+     margin-bottom: 0 !important;
+     .about-title-heading{
+          font-weight: 800;
+          line-height: 92%;
+          color: variables.$accent-color;
+          font-size: 100px !important;
+     }
+     .about-title-text{
+          font-size: 40px !important;
+          color: white !important;
+          margin-bottom: 0 !important;
+          .italic-text{
+               font-style: italic;
+               font-weight: 600;
+          }
+     }
+
+}
+
+.learn-more{
+     background-color: white;
+     cursor: pointer;
+     padding: 14px 18px;
+     text-align: center;
+     width: 200px;
+     border-radius: 4px;
+     color: variables.$main-bg;
+     transition: all 0.4s ease-in-out;
+     &:hover{
+          background-color: variables.$main-bg;
+          transform: scale(1.0);
+     }
+}
+
+
+#about-main{
+     padding: 50px 20px;
+    
+     .about-main-heading{
+          font-size: 20px;
+          color: white;
+          text-align: center;
+          padding: 50px 100px;
+     }
+     .about-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 50px 20px;
+          color: #fff; // Assuming the text is white
+        
+          .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+          }
+        
+          .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); // 2 equal columns
+            gap: 20px; // Spacing between grid items
+        
+            p {
+              font-size: 16px;
+              line-height: 1.5;
+            }
+          }
+        }
+
+        .drivers-info-body{
+          padding: 50px 5px;
+          height: auto;
+        }
+
+        .section-driver-card{
+          padding: 80px 10px;
+          .section-cont{
+               border-radius: 20px !important;
+          }
+          
+        }
+
+        .about-drivers{
+          padding: 50px 10px;
+        }
+
+        .about-trending{
+          padding: 80px 0 50px 0px;
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+          justify-content: center;
+          .magnetic-button{
+               width: 280px;
+          }
+          #trendingSlider{
+               padding: 0px 20px;
+          }
+        }
+        
+}
+
+@media only screen and (max-width: 1250px){
+     .about-title{
+ 
+          .about-title-heading{
+               font-size: 104px !important;
+          }
+          .about-title-text{
+               font-size: 38px !important;
+               .italic-text{
+                    font-style: italic;
+                    font-weight: 600;
+               }
+          }
+     
+     }
+}
+
+@media only screen and (max-width: 1050px){
+     .about-title{
+ 
+          .about-title-heading{
+               font-size: 96px !important;
+          }
+          .about-title-text{
+               font-size: 32px !important;
+               .italic-text{
+                    font-style: italic;
+                    font-weight: 600;
+               }
+          }
+     
+     }
+}
+
+@media only screen and (max-width: 800px){
+     .about-title{
+ 
+          .about-title-heading{
+               font-size: 76px !important;
+          }
+          .about-title-text{
+               font-size: 28px !important;
+               .italic-text{
+                    font-style: italic;
+                    font-weight: 600;
+               }
+          }
+     
+     }
+}
+@media only screen and (max-width: 650px){
+     .about-title{
+ 
+          .about-title-heading{
+               font-size: 56px !important;
+          }
+          .about-title-text{
+               font-size: 20px !important;
+               .italic-text{
+                    font-style: italic;
+                    font-weight: 600;
+               }
+          }
+     
+     }
+}
+@media only screen and (max-width: 480px){
+     .about-title{
+          bottom: 45%;
+          left: 20px;
+ 
+          .about-title-heading{
+               font-size: 58px !important;
+          }
+          .about-title-text{
+               font-size: 18px !important;
+               .italic-text{
+                    font-style: italic;
+                    font-weight: 600;
+               }
+          }
+     
+     }
+     .learn-more{
+          width: 125px !important;
+          padding: 10px !important;
+     }
+}
+
+
+   // Responsive Design for Mobile View
+   @media (max-width: 768px) {
+     .grid-container {
+       grid-template-columns: 1fr; // Stack columns on smaller screens
+     }
+   }
+
+
+   @media only screen and (max-width: 600px){
+     .about-main-heading{
+          font-size: 14px !important;
+          padding: 50px 20px !important;
+     }
+     .about-container{
+          padding: 50px 20px !important;
+          p{
+               font-size: 12px !important;
+          }
+     }
+     .section-cont {
+          height: 70vh  !important;
+     }
+     .about-drivers{
+          padding: 50px 0px !important;
+     }
+   }

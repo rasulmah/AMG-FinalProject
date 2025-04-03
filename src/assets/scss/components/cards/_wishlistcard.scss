@@ -1,0 +1,247 @@
+@use '../../abstracts/variables';
+
+
+.wishlist-card-container {
+     width: 360px !important;
+     height: auto;
+     min-height: 545px;
+     background-color: rgb(255, 255, 255);
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     .product-img{
+          width: 100%;
+          height: 100%;
+          min-height: 450px !important;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          transition: all 0.4s ease-in-out;
+     }
+     .basket-handler-contaier{
+          width: 360px;
+          position: absolute;
+          visibility: hidden;
+          transform: translateY(20px);
+          transition: all 0.4s ease-in-out;
+          opacity: 0;
+          padding-right: 40px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .counter{
+               .dec-btn{
+                    padding: 8px 12px;
+                    border: 1px solid rgba(59, 59, 59, 0.26);
+                    border-radius: 4px;
+                    transition: all 0.1s ease-in-out;
+                    &:hover{
+                         border-bottom: 2px solid variables.$accent-color;
+                         transform: scale(1.0);
+                    }
+               }
+               span{
+                    font-size: 16px;
+                    padding: 0 10px;
+                    width: 30px;
+                    display: inline-block;
+               } 
+          }
+          .add-to-basket button{
+               padding: 8px 12px;
+               border: 1px solid rgba(59, 59, 59, 0.26);
+               background-color: variables.$Color_PetronasTeal-dark;
+               border-radius: 4px;
+               text-transform: capitalize;
+               font-weight: 700;
+               transition: all 0.4s ease-in-out;
+               color: variables.$Color_Background-lightGrey;
+               &:hover{
+                    background-color: variables.$Color_PetronasTeal-light;
+                    color: variables.$Color_CarbonGrey;
+                    transform: scale(1.0);
+               }
+          }
+     }
+     .info-container{
+          width: 100%;
+          height: 120px !important;
+          position: relative;
+          padding: 0 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 10px;
+          .title, p{
+               font-size: 17px;
+               margin-bottom: 0;
+               opacity: 1;
+               visibility: visible;
+               transition: all 0.4s ease-in-out;
+          }
+     }
+}
+
+
+
+.wishlist-card-container:hover{
+     background-color: rgb(233, 233, 233);
+     transform: scale(1.0);
+     .basket-handler-contaier{
+          visibility: visible;
+          transform: translateY(0px);
+          opacity: 1;
+     }
+     .title, p{
+          visibility: hidden;
+          transform: scale(1.0);
+          opacity: 0;
+     }
+     .product-img{
+          transform: scale(1.0);
+     }
+}
+
+
+@media (max-width:780px){
+     .wishlist-card-container {
+          width: 320px !important;
+          height: auto;
+          min-height: 505px;
+          .info-container{
+               
+               .title, p{
+                    opacity: 0 !important;
+                    visibility: hidden !important;
+               }
+          }
+          .basket-handler-contaier{
+               display: flex !important;
+               width: 100%;
+               visibility: visible !important;
+               opacity: 1 !important;
+               transform: translateY(0px) !important;
+          }
+     }
+          
+
+}
+
+
+@media (max-width:670px){
+     .wishlist-card-container {
+          width: 260px !important;
+          height: auto !important;
+          min-height: 435px !important;
+          .info-container{
+               padding: 10px !important;
+               width: 100%;
+               height: 80px !important;
+               .title, p{
+                    opacity: 0 !important;
+                    visibility: hidden !important;
+               }
+          }
+          .basket-handler-contaier{
+               width: 100%;
+               visibility: visible !important;
+               opacity: 1 !important;
+
+               transform: translateY(0px) !important;
+               button{
+                    font-size: 13px !important;
+                    padding: 6px 10px !important;
+               }
+          }
+          .info-body{
+               display: none;
+          }
+          .product-img{
+               height: 380px !important;
+          }}
+          
+
+}
+
+@media (max-width:560px){
+     .wishlist-card-container {
+          width: 360px !important;
+     height: auto;
+     min-height: 545px !important;
+     background-color: rgb(255, 255, 255);
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     .info-container{
+               
+          .title, p{
+               opacity: 0 !important;
+               visibility: hidden !important;
+          }
+     }
+     .basket-handler-contaier{
+          width: 100%;
+          visibility: visible !important;
+          opacity: 1 !important;
+          padding-right: 20px !important;
+          transform: translateY(0px) !important;
+     }
+     .product-img{
+          height: 100% !important;
+     }
+     .add-to-basket button{
+          padding: 8px 12px !important;
+          border: 1px solid rgba(59, 59, 59, 0.26);
+          background-color: variables.$Color_PetronasTeal-dark;
+          border-radius: 4px;
+          text-transform: capitalize;
+          font-weight: 700;
+          transition: all 0.4s ease-in-out;
+          color: variables.$Color_Background-lightGrey;
+          &:hover{
+               background-color: variables.$Color_PetronasTeal-light;
+               color: variables.$Color_CarbonGrey;
+               transform: scale(1.0);
+          }}
+}
+          
+          
+
+}
+
+@media (max-width:400px){
+     .wishlist-card-container {
+          width: 290px !important;
+          height: auto !important;
+          min-height: 435px !important;
+          .product-img{
+               min-height: 300px !important;
+          }
+          .info-container{
+               padding: 10px !important;
+               width: 100%;
+               height: 80px !important;
+               .title, p{
+                    opacity: 0 !important;
+                    visibility: hidden !important;
+               }
+          }
+          .basket-handler-contaier{
+               width: 100%;
+               visibility: visible !important;
+               opacity: 1 !important;
+               transform: translateY(0px) !important;
+               button{
+                    font-size: 13px !important;
+                    padding: 6px 10px !important;
+               }
+          }
+          .info-body{
+               display: none;
+          }
+          .product-img{
+               height: 380px !important;
+          }}
+          
+
+}
