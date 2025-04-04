@@ -19,7 +19,6 @@ const ProductCategories = () => {
 
   return (
      <div className="gap-5 ">
-       {/* ✅ Display only the first 3 categories */}
        {categories?.slice(0, 3).map((category) => ( 
          <div key={category.id} className="d-flex flex-column align-items-center gap-5">
            <h2 className='text-light'>{category.category}</h2>

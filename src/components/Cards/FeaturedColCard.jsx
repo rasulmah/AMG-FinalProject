@@ -1,6 +1,8 @@
 import 'react'
 
 import '../../assets/scss/components/cards/_featuredColCard.scss'
+import StaticLang from '../../utils/StaticLang'
+import { Link } from 'react-router-dom'
 
 // eslint-disable-next-line react/prop-types
 const FeaturedColCard = ({img, title, desc}) => {
@@ -15,7 +17,7 @@ const FeaturedColCard = ({img, title, desc}) => {
         {desc}
         </p>
         <a className='shp-text d-flex'>
-          <p>Shop</p> 
+          <Link className='text' to={"/products"}><StaticLang en="Shop" az="Keç" /></Link> 
           <p className='category'>{title}</p>
         </a>
       </div>

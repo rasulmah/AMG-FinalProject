@@ -2,10 +2,13 @@
 import { useState } from 'react';
 import swal from 'sweetalert2';
 import '../../assets/scss/dashboard/_dashcard.scss';
+import StaticLang from '../../utils/StaticLang';
+import { useLang } from '../../context/LangContext';
 
 const DashboardProductCard = ({ product, onEdit, onDelete }) => {
   const { title, img } = product;
   const [showFullTitle, setShowFullTitle] = useState(false);
+  const { language } = useLang(); // get current lang
 
   const handleTitleClick = () => {
     setShowFullTitle(!showFullTitle);
@@ -14,18 +17,27 @@ const DashboardProductCard = ({ product, onEdit, onDelete }) => {
   // Handle delete confirmation and action
   const handleDelete = async (productId) => {
     const result = await swal.fire({
-      title: 'Are you sure you want to delete this product?',
-      text: "This action cannot be undone.",
+      title: language === 'az' 
+        ? 'Bu məhsulu silmək istədiyinizə əminsiniz?' 
+        : 'Are you sure you want to delete this product?',
+      text: language === 'az' 
+        ? 'Bu əməliyyat geri qaytarıla bilməz.' 
+        : 'This action cannot be undone.',
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Yes, delete it!',
-      cancelButtonText: 'Cancel',
+      confirmButtonText: language === 'az' ? 'Bəli, sil' : 'Yes, delete it!',
+      cancelButtonText: language === 'az' ? 'Ləğv et' : 'Cancel',
     });
 
     if (result.isConfirmed) {
-      // Trigger delete action from parent component
       onDelete(productId);
-      swal.fire('Deleted!', 'Product has been deleted.', 'success');
+      swal.fire({
+        title: language === 'az' ? 'Silindi!' : 'Deleted!',
+        text: language === 'az' 
+          ? 'Məhsul uğurla silindi.' 
+          : 'Product has been deleted.',
+        icon: 'success',
+      });
     }
   };
 
@@ -38,20 +50,22 @@ const DashboardProductCard = ({ product, onEdit, onDelete }) => {
         <p
           className={`d-prod-title ${showFullTitle ? 'full-title' : ''}`}
           onClick={handleTitleClick}
-          title={title} // optional, shows full text on hover
+          title={title}
         >
           {showFullTitle ? title : title.length > 15 ? title.slice(0, 15) + '...' : title}
         </p>
         <div className="editor-buttons">
-          <button className='edit-btn' onClick={() => onEdit(product)}>Edit</button>
+          <button className="edit-btn" onClick={() => onEdit(product)}>
+            <StaticLang en="Edit" az="Redaktə" />
+          </button>
           <button
             className="delete-btn"
             onClick={(e) => {
-              e.stopPropagation(); // Prevent the card click event (modal open) when clicking delete
-              handleDelete(product.id); // Trigger delete confirmation
+              e.stopPropagation();
+              handleDelete(product.id);
             }}
           >
-            Delete
+            <StaticLang en="Delete" az="Sil" />
           </button>
         </div>
       </div>
@@ -60,7 +74,3 @@ const DashboardProductCard = ({ product, onEdit, onDelete }) => {
 };
 
 export default DashboardProductCard;
-
-
-
-

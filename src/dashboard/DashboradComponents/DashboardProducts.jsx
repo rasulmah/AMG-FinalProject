@@ -4,6 +4,7 @@ import { getAllProducts, deleteProduct } from "../../tools/slicers/productSlice"
 import DashboardProductCard from "./DashboardProductCard";
 import '../../assets/scss/dashboard/_pagination.scss'
 import AddProductModal from "./AddProductModal"; // Use correct modal
+import StaticLang from "../../utils/StaticLang";
 
 const DashboardProducts = () => {
   const dispatch = useDispatch();
@@ -65,11 +66,11 @@ const DashboardProducts = () => {
 
   return (
     <div className="dashboard-products d-flex flex-column align-items-center">
-      <h3 className="text-light h2 pb-2 text-center">Products</h3>
+      <h3 className="text-light h2 pb-2 text-center"><StaticLang en="Products" az="Məhsullar" /></h3>
 
       <div className="add-product">
         <button className="add-product-button" onClick={handleAddProduct}>
-          Add product +
+          <StaticLang en="Add product +" az="Məhsul Əlavə et +" />
         </button>
       </div>
 

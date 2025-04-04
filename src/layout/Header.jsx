@@ -6,6 +6,8 @@ import { Badge } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { calculateBasket } from '../tools/slicers/basketSlice';
 import { getAllProducts } from '../tools/slicers/productSlice';
+import StaticLang from '../utils/StaticLang';
+import { useLang } from '../context/LangContext';
 
 
 const Header = () => {
@@ -15,6 +17,10 @@ const Header = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [isOpen, setIsOpen] = useState(false);
+
+    const { language } = useLang();
+
+    const placeholderforheader = language === 'az' ? 'Məhsul axtar...' : 'Search for products...';
 
   const openMenu = () => setIsOpen(true);
   const closeMenu = () => setIsOpen(false);
@@ -66,7 +72,7 @@ useEffect(() => {
         <NavLink to='/dashboard' onClick={closeMenu} className="side-icon-link">
         <button className="menu-icon d-flex justify-content-center">
         <i className="fa-solid text-light fa-screwdriver-wrench" />
-        </button> <span className='side-icon-text'>Editor</span> 
+        </button> <span className='side-icon-text'><StaticLang en="Editor" az="Admin" /></span> 
         </NavLink>
         </Badge>
       ) : (
@@ -74,7 +80,7 @@ useEffect(() => {
         <NavLink to='/account' onClick={closeMenu} className="side-icon-link">
         <button className="menu-icon d-flex justify-content-center">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18"><path fill="currentColor" fillRule="evenodd" d="M9.48 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM3.434 12.008A3.5 3.5 0 0 1 6.79 9.5h5.427a3.5 3.5 0 0 1 3.365 2.539l1.378 4.824-.961.274-1.379-4.824a2.5 2.5 0 0 0-2.403-1.813H6.79a2.5 2.5 0 0 0-2.397 1.791l-1.434 4.85L2 16.859l1.434-4.85Z" clipRule="evenodd" /></svg>
-        </button> <span className='side-icon-text'>Account</span> 
+        </button> <span className='side-icon-text'><StaticLang en="Account" az="Hesab" /></span> 
         </NavLink>
         </Badge>
       );
@@ -82,7 +88,7 @@ useEffect(() => {
     return <Badge><NavLink to='/login' onClick={closeMenu} className="side-icon-link">
     <button className="menu-icon d-flex justify-content-center">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18"><path fill="currentColor" fillRule="evenodd" d="M9.48 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM3.434 12.008A3.5 3.5 0 0 1 6.79 9.5h5.427a3.5 3.5 0 0 1 3.365 2.539l1.378 4.824-.961.274-1.379-4.824a2.5 2.5 0 0 0-2.403-1.813H6.79a2.5 2.5 0 0 0-2.397 1.791l-1.434 4.85L2 16.859l1.434-4.85Z" clipRule="evenodd" /></svg>
-    </button> <span className='side-icon-text'>Log In</span> 
+    </button> <span className='side-icon-text'><StaticLang en="Log In" az="Giriş" /></span> 
     </NavLink></Badge>;
   };
 
@@ -163,19 +169,19 @@ useEffect(() => {
       <nav className='nav d-flex align-items-center justify-content-center'>
         <ul className='navbar d-flex align-items-center'>
           <li className='navbar-item'>
-            <NavLink to='/' className='navbar-link'>Home</NavLink>
+            <NavLink to='/' className='navbar-link'><StaticLang en="Home" az="Ana Səhifə" /></NavLink>
           </li>
           <li className='navbar-item'>
-            <NavLink to='/about' className='navbar-link'>About</NavLink>
+            <NavLink to='/about' className='navbar-link'><StaticLang en="About" az="Haqqımızda" /></NavLink>
           </li>
           <li className='navbar-item'>
-            <NavLink to='/products' className='navbar-link'>Products</NavLink>
+            <NavLink to='/products' className='navbar-link'><StaticLang en="Products" az="Məhsullar" /></NavLink>
           </li>
           <li className='navbar-item'>
-            <NavLink to='/contact' className='navbar-link'>Contact</NavLink>
+            <NavLink to='/contact' className='navbar-link'><StaticLang en="Contact" az="Əlaqə" /></NavLink>
           </li>
           <li className='navbar-item'>
-            <NavLink to='/FAQ' className='navbar-link'>FAQ</NavLink>
+            <NavLink to='/FAQ' className='navbar-link'><StaticLang en="FAQ" az="FAQ" /></NavLink>
           </li>
         </ul>
       </nav>
@@ -189,7 +195,7 @@ useEffect(() => {
         <input
               type="text"
               className="search-bar"
-              placeholder="Search for products..."
+              placeholder={placeholderforheader}
               value={searchTerm}
               onChange={(e) => {
                 setSearchTerm(e.target.value);
@@ -225,7 +231,6 @@ useEffect(() => {
         </NavLink>
         </Badge>
 
-         {/* User Navigation Link (Login / Account / Dashboard) */}
          {getUserNavLink()}
 
         <button onClick={openMenu} id='open-btn' className="menu-icon  d-flex justify-content-center">
@@ -254,27 +259,27 @@ useEffect(() => {
         <ul>
           <li>
             <NavLink to="/" onClick={closeMenu}>
-              Home
+            <StaticLang en="Home" az="Ana Səhifə" />
             </NavLink>
           </li>
           <li>
             <NavLink to="/about" onClick={closeMenu}>
-              About
+            <StaticLang en="About" az="Haqqımızda" />
             </NavLink>
           </li>
           <li>
             <NavLink to="/products" onClick={closeMenu}>
-              Products
+            <StaticLang en="Products" az="Məhsullar" />
             </NavLink>
           </li>
           <li>
             <NavLink to="/contact" onClick={closeMenu}>
-              Contact
+            <StaticLang en="Contact" az="Əlaqə" />
             </NavLink>
           </li>
           <li>
             <NavLink to="/FAQ" onClick={closeMenu}>
-              FAQ
+            <StaticLang en="FAQ" az="FAQ" />
             </NavLink>
           </li>
         </ul>
@@ -283,7 +288,7 @@ useEffect(() => {
           <input
   type="text"
   className="search-bar"
-  placeholder="Search for products..."
+  placeholder={placeholderforheader}
   value={searchTerm}
   onChange={(e) => {
     setSearchTerm(e.target.value);
@@ -336,7 +341,7 @@ useEffect(() => {
         <NavLink to='/wishlist' onClick={closeMenu} className="side-icon-link">
         <button className="menu-icon d-flex justify-content-center">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18"><path className="ico-Wishlist_Middle" fill="transparent" fillRule="evenodd" d="M.5 6.143a4.643 4.643 0 0 1 8.214-2.965 4.643 4.643 0 0 1 8.214 2.965c0 1.282-.566 2.398-1.36 3.283-.822.918-2.536 2.687-4.044 4.226a609.753 609.753 0 0 1-2.455 2.49.5.5 0 0 1-.71 0 717.66 717.66 0 0 1-2.455-2.49c-1.508-1.54-3.221-3.308-4.044-4.226C1.066 8.54.5 7.425.5 6.143Z" clipRule="evenodd" /><path className="ico-Wishlist_Outer" fill="currentColor" fillRule="evenodd" d="M5.143 2A4.143 4.143 0 0 0 1 6.143c0 1.127.497 2.129 1.232 2.949.814.908 2.52 2.668 4.03 4.21a611.137 611.137 0 0 0 2.452 2.488 637.037 637.037 0 0 0 2.453-2.488c1.51-1.542 3.215-3.302 4.03-4.21.735-.82 1.232-1.822 1.232-2.95a4.143 4.143 0 0 0-7.33-2.645.5.5 0 0 1-.77 0A4.13 4.13 0 0 0 5.144 2Zm3.571 14.5-.354.352-.228-.229a566.813 566.813 0 0 1-2.585-2.622c-1.505-1.536-3.227-3.313-4.06-4.241C.637 8.81 0 7.58 0 6.143a5.143 5.143 0 0 1 8.714-3.7 5.143 5.143 0 0 1 8.714 3.7c0 1.437-.635 2.666-1.487 3.617-.832.928-2.554 2.705-4.06 4.241a602.406 602.406 0 0 1-2.585 2.623l-.227.228-.355-.352Zm0 0 .355.352a.5.5 0 0 1-.71 0l.355-.352Z" clipRule="evenodd" /></svg>
-        </button> <span className='side-icon-text'>Wishlist</span> 
+        </button> <span className='side-icon-text'><StaticLang en="Wishlist" az="Favorilər" /></span> 
         </NavLink>
         </Badge>
         
@@ -344,7 +349,7 @@ useEffect(() => {
         <NavLink to='/basket' onClick={closeMenu} className="side-icon-link">
         <button className="menu-icon d-flex justify-content-center">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18"><path fill="currentColor" fillRule="evenodd" d="M13.186 6.5H4.76a2 2 0 0 0-1.993 1.834l-.68 8.166h13.82l-.729-8.177A2 2 0 0 0 13.186 6.5Zm2.989 1.734A3 3 0 0 0 13.186 5.5H4.76a3 3 0 0 0-2.99 2.75L1 17.5h16l-.825-9.266Z" clipRule="evenodd" /><path fill="currentColor" fillRule="evenodd" d="M9 2.5A2.5 2.5 0 0 0 6.5 5v3.5h-1V5a3.5 3.5 0 1 1 7 0v3.5h-1V5A2.5 2.5 0 0 0 9 2.5Z" clipRule="evenodd" /></svg>
-        </button> <span className='side-icon-text'>Basket</span>  
+        </button> <span className='side-icon-text'><StaticLang en="Basket" az="Səbət" /></span>  
         </NavLink>
         </Badge>
 

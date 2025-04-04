@@ -5,8 +5,10 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToWishlist, removeFromWishlist } from "../tools/slicers/wishlistSlice"; 
 import Swal from "sweetalert2";
+import { useLang } from "../context/LangContext";
 
 const Product = ({ product }) => {
+  const { language } = useLang();
   const [isHovered, setIsHovered] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -25,11 +27,13 @@ const Product = ({ product }) => {
 
   const handleToggleWishlist = (e) => {
     e.preventDefault();
-
+  
     if (!user) {
       Swal.fire({
-        title: "Please Log In",
-        text: "You must be logged in to add items to your wishlist. However, you can still save it for later, but you won't be able to checkout or add to cart.",
+        title: language === "az" ? "Zəhmət olmasa daxil olun" : "Please Log In",
+        text: language === "az"
+          ? "İstək siyahısına əlavə etmək üçün daxil olun. Lakin, daxil olmadan da saxlaya bilərsiniz, lakin səbətə əlavə etmək və almaq mümkün olmayacaq."
+          : "You must be logged in to add items to your wishlist. However, you can still save it for later, but you won't be able to checkout or add to cart.",
         icon: "warning",
         customClass: {
           icon: "swal-log-in-icon",
@@ -41,8 +45,8 @@ const Product = ({ product }) => {
           container: "swal-log-in-container"
         },
         showCancelButton: true,
-        confirmButtonText: "Log In",
-        cancelButtonText: "Save Without Logging In",
+        confirmButtonText: language === "az" ? "Daxil ol" : "Log In",
+        cancelButtonText: language === "az" ? "Daxil olmadan saxla" : "Save Without Logging In",
       }).then((result) => {
         if (result.isConfirmed) {
           navigate("/login");
@@ -50,33 +54,41 @@ const Product = ({ product }) => {
           if (isInWishlist) {
             dispatch(removeFromWishlist(id));
             Swal.fire({
-              title: "Removed!",
-              text: "Product removed from your wishlist.",
+              title: language === "az" ? "Silindi!" : "Removed!",
+              text: language === "az"
+                ? "Məhsul istək siyahınızdan silindi."
+                : "Product removed from your wishlist.",
               icon: "info",
             });
           } else {
             const payload = { id, title, img, imghover, sizes, price, ratings, description };
             dispatch(addToWishlist(payload));
-            let timerInterval;
+  
             Swal.fire({
               timer: 2000,
               timerProgressBar: true,
               didOpen: () => {
-                const timer = Swal.getPopup().querySelector("b");
-                 setInterval(() => {
-                  timer.textContent = `${Swal.getTimerLeft()}`;
-                }, 100);
+                const content = Swal.getHtmlContainer()?.querySelector("span.timer-text");
+                if (content) {
+                  const interval = setInterval(() => {
+                    
+                  }, 100);
+                  Swal.stopTimer = () => clearInterval(interval);
+                }
               },
               willClose: () => {
-                clearInterval(timerInterval);
+                if (Swal.stopTimer) Swal.stopTimer();
               },
               html: `
-              <div style="display: flex; align-items: start; gap: 10px;">
-                <img src="${img}" alt="${title}" style="width: 80px; height: 80px; object-fit: cover;">
-                <span style="font-size: 16px; font-weight: 300; text-align: left;">${title} has succesfully added to your wishlist</span>
-              </div>
-            `,showConfirmButton: false, // Hide confirmation button
-            allowOutsideClick: false,
+                <div style="display: flex; align-items: start; gap: 10px;">
+                  <img src="${img}" alt="${title}" style="width: 80px; height: 80px; object-fit: cover;">
+                  <span class="timer-text" style="font-size: 16px; font-weight: 300; text-align: left;">
+                    ${title} ${language === "az" ? "istək siyahınıza əlavə edildi" : "has successfully been added to your wishlist"}
+                  </span>
+                </div>
+              `,
+              showConfirmButton: false,
+              allowOutsideClick: true,
               customClass: {
                 popup: "swal-log-in-popup-1",
                 htmlContainer: "swal-log-in-text-1",
@@ -88,43 +100,51 @@ const Product = ({ product }) => {
       });
       return;
     }
-
+  
     if (isInWishlist) {
       dispatch(removeFromWishlist(id));
       Swal.fire({
-        title: "Removed!",
-        text: "Product removed from your wishlist.",
+        title: language === "az" ? "Silindi!" : "Removed!",
+        text: language === "az"
+          ? "Məhsul istək siyahınızdan silindi."
+          : "Product removed from your wishlist.",
         icon: "info",
       });
     } else {
       const payload = { id, title, img, imghover, sizes, price, ratings, description };
       dispatch(addToWishlist(payload));
-      let timerInterval;
-            Swal.fire({
-              timer: 2000,
-              timerProgressBar: true,
-              didOpen: () => {
-                const timer = Swal.getPopup().querySelector("b");
-                 setInterval(() => {
-                  timer.textContent = `${Swal.getTimerLeft()}`;
-                }, 100);
-              },
-              willClose: () => {
-                clearInterval(timerInterval);
-              },
-              html: `
-              <div style="display: flex; align-items: start; gap: 10px;">
-                <img src="${img}" alt="${title}" style="width: 80px; height: 80px; object-fit: cover;">
-                <span style="font-size: 16px; font-weight: 300; text-align: left;">${title} has succesfully added to your wishlist</span>
-              </div>
-            `,showConfirmButton: false, // Hide confirmation button
-            allowOutsideClick: false,
-              customClass: {
-                popup: "swal-log-in-popup-1",
-                htmlContainer: "swal-log-in-text-1",
-                container: "swal-log-in-container-1"
-              },
-            });
+  
+      Swal.fire({
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+          const content = Swal.getHtmlContainer()?.querySelector("span.timer-text");
+          if (content) {
+            const interval = setInterval(() => {
+             
+            }, 100);
+            Swal.stopTimer = () => clearInterval(interval);
+          }
+        },
+        willClose: () => {
+          if (Swal.stopTimer) Swal.stopTimer();
+        },
+        html: `
+          <div style="display: flex; align-items: start; gap: 10px;">
+            <img src="${img}" alt="${title}" style="width: 80px; height: 80px; object-fit: cover;">
+            <span class="timer-text" style="font-size: 16px; font-weight: 300; text-align: left;">
+              ${title} ${language === "az" ? "istək siyahınıza əlavə edildi" : "has successfully been added to your wishlist"}
+            </span>
+          </div>
+        `,
+        showConfirmButton: false,
+        allowOutsideClick: true,
+        customClass: {
+          popup: "swal-log-in-popup-1",
+          htmlContainer: "swal-log-in-text-1",
+          container: "swal-log-in-container-1"
+        },
+      });
     }
   };
 

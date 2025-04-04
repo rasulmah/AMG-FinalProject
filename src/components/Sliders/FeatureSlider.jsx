@@ -9,6 +9,7 @@ import '../../assets/scss/components/sliders/_featureslider.scss'
 // import required modules
 import {  Autoplay, Pagination } from 'swiper/modules';
 import FeatureCard from '../Cards/FeatureCard';
+import StaticLang from '../../utils/StaticLang';
 
 
 const FeatureSlider = () => {
@@ -49,29 +50,37 @@ const FeatureSlider = () => {
         id="FeatureSlider"
       >
         <SwiperSlide>
-          <FeatureCard
-          img={"//shop-int.mercedesamgf1.com/cdn/shop/files/usp_merchandise.png?v=1700130004&width=25"} 
-          title={"Official Merchandise"}
-          desc={"The Official Destination for Silver Arrows Merchandise"} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <FeatureCard
-          img={"//shop-int.mercedesamgf1.com/cdn/shop/files/usp_shipping.png?v=1700130018&width=25"}
-          title={"Worldwide Delivery"}
-          desc={"Racing to your door with DPD express worldwide delivery"} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <FeatureCard 
-          img={"//shop-int.mercedesamgf1.com/cdn/shop/files/usp_exclusive.png?v=1700130032&width=25"}
-          title={"Exclusive Products"}
-          desc={"Shop with the Team to get access to Official merchandise"} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <FeatureCard
-          img={"https://shop-int.mercedesamgf1.com/cdn/shop/files/usp_next_day_delivery.png?v=1700130046&width=25"}
-          title={"Tracked Delivery"}
-          desc={"Fast, tracked and secure DPD delivery straight to your door"} />
-        </SwiperSlide>
+  <FeatureCard
+    img={"//shop-int.mercedesamgf1.com/cdn/shop/files/usp_merchandise.png?v=1700130004&width=25"}
+    title={<StaticLang en="Official Merchandise" az="Rəsmi Məhsullar" />}
+    desc={<StaticLang en="The Official Destination for Silver Arrows Merchandise" az="Silver Arrows üçün rəsmi məhsulların ünvanı" />}
+  />
+</SwiperSlide>
+
+<SwiperSlide>
+  <FeatureCard
+    img={"//shop-int.mercedesamgf1.com/cdn/shop/files/usp_shipping.png?v=1700130018&width=25"}
+    title={<StaticLang en="Worldwide Delivery" az="Dünya üzrə Çatdırılma" />}
+    desc={<StaticLang en="Racing to your door with DPD express worldwide delivery" az="DPD ilə sürətli və qlobal çatdırılma – qapınıza qədər" />}
+  />
+</SwiperSlide>
+
+<SwiperSlide>
+  <FeatureCard
+    img={"//shop-int.mercedesamgf1.com/cdn/shop/files/usp_exclusive.png?v=1700130032&width=25"}
+    title={<StaticLang en="Exclusive Products" az="Eksklüziv Məhsullar" />}
+    desc={<StaticLang en="Shop with the Team to get access to Official merchandise" az="Komanda ilə alış-veriş edərək rəsmi məhsullara sahib olun" />}
+  />
+</SwiperSlide>
+
+<SwiperSlide>
+  <FeatureCard
+    img={"https://shop-int.mercedesamgf1.com/cdn/shop/files/usp_next_day_delivery.png?v=1700130046&width=25"}
+    title={<StaticLang en="Tracked Delivery" az="İzlənən Çatdırılma" />}
+    desc={<StaticLang en="Fast, tracked and secure DPD delivery straight to your door" az="Sürətli, izlənən və təhlükəsiz DPD çatdırılması birbaşa qapınıza" />}
+  />
+</SwiperSlide>
+
         
 
 

@@ -1,5 +1,6 @@
 import 'react'
 import MagneticButton from './Buttons/MagneticButton'
+import StaticLang from '../utils/StaticLang';
 
 // eslint-disable-next-line react/prop-types
 const HeroMain = ({element}) => {
@@ -26,7 +27,7 @@ const HeroMain = ({element}) => {
   <p className='kicker'>{section_desc}</p>
       <h2 className='title'>{section_title}</h2> 
       </div>
-      <MagneticButton className="d-flex"  text="Shop Now"></MagneticButton>
+      <MagneticButton className="d-flex"  text={<StaticLang en="Shop Now" az="Alış-verişə başla" />}></MagneticButton>
     </div>
     </>
   )

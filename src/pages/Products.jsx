@@ -56,7 +56,15 @@ const Products = () => {
     return (
       <div className="filter-dropdown">
         <button className="dropdown-header" onClick={() => setOpenDropdown(isOpen ? null : title)}>
-          {title} <span className={`arrow ${isOpen ? 'open' : ''}`}>▼</span>
+          <StaticLang
+            en={title}
+            az={
+              title === 'Collection' ? 'Kolleksiya' :
+              title === 'Category' ? 'Kateqoriya' :
+              title === 'Size' ? 'Ölçü' :
+              title === 'Colour' ? 'Rəng' : title
+            }
+          /> <span className={`arrow ${isOpen ? 'open' : ''}`}>▼</span>
         </button>
         {isOpen && (
           <div className="dropdown-content d-flex flex-column justify-content-between gap-1">
@@ -76,8 +84,10 @@ const Products = () => {
                 </div>
               ))}
             </div>
-            <div className="filters-header d-flex justify-content-start align-items-start ">
-              <button onClick={resetFilters} className="reset-btn-1">Reset Filters </button>
+            <div className="filters-header d-flex justify-content-start align-items-start">
+              <button onClick={resetFilters} className="reset-btn-1">
+                <StaticLang en="Reset Filters" az="Filtrləri sıfırla" />
+              </button>
             </div>
           </div>
         )}
@@ -137,7 +147,9 @@ const Products = () => {
         <div className="heading-for-products">
           <p className='tree'>HOME / PRODUCTS</p>
           <h2>{activeCategory || <StaticLang en="Products" az="Məhsullar" />}</h2>
-          <p className='abc'><StaticLang en="Our new fanwear brings a refreshed energy, driven by our shared values of innovation and peak performance, with a stylish edge. Taking fanwear into the future, the collection features iconic team colours and comfortable, style-forward silhouettes. We’ve blended a sleek design with high-performance function across our DNA, Premium Sweat, and Woven collections. Style it up and wear your passion with pride." az="Yeni fanat geyimimiz, innovasiya və ən yüksək performans kimi ortaq dəyərlərimizdən qaynaqlanan, dəbli kənarı ilə təzələnmiş enerji gətirir. Fanat geyimlərini gələcəyə götürən kolleksiyada ikonik komanda rəngləri və rahat, üsluba uyğun siluetlər var. Biz DNT, Premium Sweat və Woven kolleksiyalarımızda yüksək performans funksiyası ilə parlaq dizaynı birləşdirdik. Onu üslublandırın və ehtirasınızı qürurla geyinin" /></p>
+          <p className='abc'>
+          <StaticLang en="Our new fanwear brings a refreshed energy, driven by our shared values of innovation and peak performance, with a stylish edge. Taking fanwear into the future, the collection features iconic team colours and comfortable, style-forward silhouettes. We’ve blended a sleek design with high-performance function across our DNA, Premium Sweat, and Woven collections. Style it up and wear your passion with pride." az="Yeni fanat geyimimiz, innovasiya və ən yüksək performans kimi ortaq dəyərlərimizdən qaynaqlanan, dəbli kənarı ilə təzələnmiş enerji gətirir. Fanat geyimlərini gələcəyə götürən kolleksiyada ikonik komanda rəngləri və rahat, üsluba uyğun siluetlər var. Biz DNT, Premium Sweat və Woven kolleksiyalarımızda yüksək performans funksiyası ilə parlaq dizaynı birləşdirdik. Onu üslublandırın və ehtirasınızı qürurla geyinin" />
+          </p>
           <div className=' d-flex w-100 flex-column justify-content-center align-items-center'>
             <div className="categories-by-buttons d-flex gap-2 align-items-center flex-wrap justify-content-center">
               {categories.map(category => (
@@ -192,10 +204,10 @@ const Products = () => {
           />
         </div>
         <div className='sort-by-cont d-flex align-items-center justify-content-end w-50 gap-3'>
-          <span className='text-light gg'>Sort By:</span>
+          <span className='text-light gg'><StaticLang en="Sort By:" az="Sırala:" /></span>
           <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-            <option value="priceLowHigh">Price: Low to High</option>
-            <option value="priceHighLow">Price: High to Low</option>
+            <option value="priceLowHigh"><StaticLang en="Price: Low to High" az="Qiymət: Ən ucuzdan" /></option>
+            <option value="priceHighLow"><StaticLang en="Price: High to Low" az="Qiymət: Ən bahadan" /></option>
           </select>
         </div>
       </div>
@@ -218,11 +230,15 @@ const Products = () => {
                 )}
               </div>
               <div>
-                <button onClick={resetFilters} className="reset-btn">Clear Filters</button>
+                <button onClick={resetFilters} className="reset-btn">
+                  <StaticLang en="Clear Filters" az="Filtrləri təmizlə" />
+                </button>
               </div>
             </div>
           </div>
-          <div className='div-for-span px-4'>{filteredProducts.length} PRODUCTS</div>
+          <div className='div-for-span px-4'>
+            {filteredProducts.length} <StaticLang en="PRODUCTS" az="MƏHSUL" />
+          </div>
         </div>
 
         <div className="products-grid-main">
